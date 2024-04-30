@@ -29,13 +29,13 @@ extension CustomAlertConfiguration {
         public var pressedBackground: CustomAlertBackground = .color(Color(.customAlertBackgroundColor))
         
         @available(iOS 15.0, *)
-        mutating func font(_ font: Font, for role: ButtonRole) {
+        public mutating func font(_ font: Font, for role: ButtonRole) {
             guard let type = ButtonType(from: role) else { return }
             self.roleFont[type] = font
         }
         
         @available(iOS 15.0, *)
-        mutating func color(_ color: Color, for role: ButtonRole) {
+        public mutating func color(_ color: Color, for role: ButtonRole) {
             guard let type = ButtonType(from: role) else { return }
             self.roleColor[type] = color
         }
